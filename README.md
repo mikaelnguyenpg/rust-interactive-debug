@@ -16,12 +16,6 @@
 - Init project `cargo init`
 - Start dev `code .`
 
-- Init env `devbox init`
-- Add rust + rust-src + lldb `devbox add cargo rustc rust-src rust-analyzer lldb`
-- Activate env `devbox shell`
-- Init project `cargo init`
-- Start dev `code .`
-
 ```nix
 <!-- flake.nix -->
 {

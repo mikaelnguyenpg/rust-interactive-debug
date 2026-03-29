@@ -14,7 +14,13 @@
           "--bin=flake-variant"
         ]
       },
-      "args": []
+      "args": [],
+      // "sourceMap": {
+      //   "/data/20_Workspaces/10_Active/rust-interactive-debug/flake-variant": "${workspaceFolder}"
+      // },
+      // "program": "${workspaceRoot}/target/debug/flake-variant",
+      // "cwd": "${workspaceRoot}",
+      // "sourceLanguages": ["rust"],
     },
     {
       "name": "Debug unit tests in executable 'flake-variant'",

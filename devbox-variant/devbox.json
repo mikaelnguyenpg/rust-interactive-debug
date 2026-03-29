@@ -4,7 +4,8 @@
     "rustc@latest",
     "cargo@latest",
     "lldb@latest",
-    "rust-analyzer@latest"
+    "rust-analyzer@latest",
+    "python312@latest"
   ],
   "shell": {
     "init_hook": [
