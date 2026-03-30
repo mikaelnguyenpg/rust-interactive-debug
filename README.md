@@ -53,9 +53,11 @@ use flake
 
 **Usage**:
 
-- Init env & Add rust `mise use rust`
-- Add lldb `sudo apt install lldb`
-- Activate env: Need NOT
+- (Optional) Enable `mise.toml`: `mise trust`
+- Init env & Add rust & activate `mise use rust`
+- (Optional) Install env `mise install`
+- (Optional) Verify env activated: `mise current`
+- Add lldb `sudo apt install lldb` (for CodeLLDB to Debug)
 - Init project `cargo init`
 - Start dev `code .`
 
@@ -72,8 +74,16 @@ use flake
 ## VSCode Usage
 
 - Install extension: `CodeLLDB`
-- Setup Debugger: `Ctrl + Shift + p` > `Debug: Add Configuration..` (`launch.json`)
+- Setup Debugger: `Ctrl + Shift + p` > `Debug: Add Configuration..` > `Code LLDB: Cargo ...` (`launch.json`)
 - Start Debugging: `F5`
+
+!IMPORTANT:
+
+- MUST use `Code LLDB: Cargo ...` to generate correct Debug config
+- Prerequisites:
+  - VSCode: Install CodeLLDB
+  - System: Install lldb
+  - Rustup: Add rust-src
 
 ```json
 // launch.json
