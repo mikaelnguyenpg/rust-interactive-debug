@@ -1,20 +1,14 @@
 {
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.17.0/.schema/devbox.schema.json",
-  "packages": [
-    "rustc@latest",
-    "cargo@latest",
-    "lldb@latest",
-    "rust-analyzer@latest",
-    "python312@latest"
-  ],
+  "packages": ["rustup@latest", "lldb@latest", "python312@latest"],
   "shell": {
     "init_hook": [
+      "rustup default stable",
+      "rustup component add rust-src rust-analyzer",
       "echo 'Welcome to devbox!' > /dev/null"
     ],
     "scripts": {
-      "test": [
-        "echo \"Error: no test specified\" && exit 1"
-      ]
+      "test": ["echo \"Error: no test specified\" && exit 1"]
     }
   }
 }

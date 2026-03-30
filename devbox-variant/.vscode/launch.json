@@ -5,15 +5,16 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Launch",
+      "name": "Debug executable 'devbox-variant'",
       "type": "lldb",
       "request": "launch",
-      "program": "${workspaceRoot}/target/debug/devbox-variant",
-      "args": [],
-      "cwd": "${workspaceRoot}",
-      "sourceMap": {
-        "/data/20_Workspaces/10_Active/rust-interactive-debug/devbox-variant": "${workspaceRoot}"
-      }
-    }
+      "cargo": {
+        "args": [
+          "run",
+          "--bin=devbox-variant"
+        ]
+      },
+      "args": []
+    },
   ]
 }

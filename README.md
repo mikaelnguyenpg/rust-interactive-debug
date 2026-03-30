@@ -33,11 +33,11 @@
   {
     devShells.default = pkgs.mkShell {
       buildInputs = with pkgs; [
-        cargo
-        rustc
-        rust-src
-        rust-analyzer
-        lldb
+        "cargo",         # Build System: Điều phối compile, quản lý dependency (crates.io) và workflow.
+        "rustc",         # Compiler: Trình biên dịch chính, chuyển mã nguồn Rust thành máy thực thi (Binary).
+        "rust-src",      # Std Lib Source: Cần thiết để Debugger "nhảy" vào xem code của thư viện chuẩn (Vec, String, v.v.).
+        "rust-analyzer", # Language Server: Cung cấp trí thông minh cho IDE (Autocomplete, Type checking, Navigation).
+        "lldb"           # Low-Level Debugger: Công cụ trực tiếp điều khiển tiến trình, đặt breakpoint và đọc giá trị biến.
       ];
     };
   };
@@ -66,7 +66,9 @@ use flake
 **Usage**:
 
 - Init env `devbox init`
-- Add rust + rust-src + lldb `devbox add cargo rustc rust-src rust-analyzer lldb`
+- Add rustup & lldb & python `devbox add rustup lldb python312`
+- Set rustup `rustup default stable`
+- Add rust-src rust-analyzer `rustup component add rust-src rust-analyzer`
 - Activate env `devbox shell`
 - Init project `cargo init`
 - Start dev `code .`
@@ -74,7 +76,7 @@ use flake
 ## VSCode Usage
 
 - Install extension: `CodeLLDB`
-- Setup Debugger: `Ctrl + Shift + p` > `Debug: Add Configuration..` > `Code LLDB: Cargo ...` (`launch.json`)
+- Setup Debugger: `Ctrl + Shift + p` > `Debug: Add Configuration..` > `Code LLDB: Cargo ...` > `Debug executable 'devbox-variant'` (`launch.json`)
 - Start Debugging: `F5`
 
 !IMPORTANT:
